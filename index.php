@@ -18,6 +18,7 @@
 		</select>
 		<input type="submit" vaule="Execute" name="Execute"/>
 		</form>
+		<div id='map' hidden="1"></div>
 		<?php
 			include("../secure/database.php");
 			$conn = new mysqli(HOST, USERNAME, PASSWORD, DBNAME);
@@ -38,7 +39,8 @@
 				        {
 				        	$lat = $row["lat"];
 				        	$lon = $row["lon"];
-				        	
+				        	$latLng = "{lat: ".$lat.", lng: ".$lon."}";
+				        	echo "<script>document.getElementById('map').hidden = false</script>";
 				        	echo "<script>
 								var map;
 								function initMap() {
@@ -46,11 +48,15 @@
     							center: {lat: ".$lat.", lng: ".$lon."},
   				  				zoom: 8
   								});
-								}
-						    	</script>";
+								var marker = new google.maps.Marker({
+  								position: {lat: ".$lat.", lng: ".$lon."},
+    							map: map,
+    							title: 'Hello World!'
+    							});
+								}</script>";
 				        	echo '<script async defer 
 				        	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCym7xb1j_WoYOuD_qLjSQ-HbtxGNCv22A&callback=initMap"></script>';
-				        	echo "<div id='map'></div>";
+				        	
 				        }
 				    }
 				} else {
@@ -59,7 +65,8 @@
 			}
 			$conn->close();
 		?>
-		<div id='map'></div>
+		
+		
 
    		
 		
