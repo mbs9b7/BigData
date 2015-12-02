@@ -53,6 +53,11 @@
     							map: map,
     							title: 'Hello World!'
     							});
+								var marker2 = new google.maps.Marker({
+  								position: {lat: 50.245, lng: 25.242},
+    							map: map,
+    							title: 'Hello World!'
+    							});
 								}</script>";
 				        	echo '<script async defer 
 				        	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCym7xb1j_WoYOuD_qLjSQ-HbtxGNCv22A&callback=initMap"></script>';
