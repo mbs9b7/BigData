@@ -3,7 +3,11 @@
 
 scp -i key-ec2.pem Air\ Temperature/Global2011T/air_temp.2010 hadoop@52.91.152.83:air_temp.2010
 
-sed -r -i 's/\s+/ /g' air_temp.2010
+Replace all white spaces from the beginning of the line
+sed -r -i 's/^ *//' your_file
+
+Replace all white spaces of a file
+sed -r -i 's/\s+/ /g' your_file
 
 CREATE TABLE air_temp(longitude FLOAT, latitude FLOAT, jan FLOAT, feb FLOAT, mar FLOAT, apr FLOAT, may FLOAT, june FLOAT, july FLOAT, aug FLOAT, sept FLOAT, oct FLOAT, nov FLOAT, dec FLOAT) ROW FORMAT DELIMITED FIELDS TERMINATED BY ' '; 
 
