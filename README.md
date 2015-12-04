@@ -15,4 +15,22 @@ LOAD DATA LOCAL INPATH '/home/hadoop/air_temp/air_temp.1901' OVERWRITE INTO TABL
 
 SELECT latitude, longitude FROM air_temp where (jan+feb+mar+apr+may+june+july+aug+sept+oct+nov+dec)/12 >= 20 AND (jan+feb+mar+apr+may+june+july+aug+sept+oct+nov+dec)/12 <= 30;
 
-INSERT OVERWRITE DIRECTORY '/user/hadoop/output' select printf("%f %f", longitude, latitude) from air_temp limit 10;
+INSERT OVERWRITE DIRECTORY '/user/hadoop/output' select printf("%f,%f", longitude, latitude) from air_temp limit 10;
+
+MYSQL
+
+create database weather;
+
+use weather;
+
+create table test2 (
+longitude float(6,3),
+latitude float(6,3),
+PRIMARY KEY(longitude, latitude)
+);
+
+grant all privileges on *.* to '%'@'%';
+grant all privileges on weather.* to ''@localhost;
+ grant all privileges on *.* to ''@'%';
+
+sqoop export --connect jdbc:mysql://localhost/weather --username root —password password --table test2 --export-dir /user/hadoop/output
