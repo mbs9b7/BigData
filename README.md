@@ -11,6 +11,7 @@ sed -r -i 's/\s+/,/g' air_temp.2010
 
 CREATE TABLE air_temp(longitude FLOAT, latitude FLOAT, jan FLOAT, feb FLOAT, mar FLOAT, apr FLOAT, may FLOAT, june FLOAT, july FLOAT, aug FLOAT, sept FLOAT, oct FLOAT, nov FLOAT, dec FLOAT) ROW FORMAT DELIMITED FIELDS TERMINATED BY ','; 
 
+//table in MySQL
 CREATE TABLE air_temp (longititude float(6,3), latitude float(6,3), jan float(3,1), feb float(3,1), march float(3,1), april float(3,1), may float(3,1), june float(3,1), july float(3,1), aug float(3,1), sept float(3,1), oct float(3,1), nov float(3,1), decm float(3,1), PRIMARY KEY(longititude, latitude));
 
 LOAD DATA LOCAL INPATH '/home/hadoop/air_temp.2010' OVERWRITE INTO TABLE air_temp; 
