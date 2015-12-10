@@ -1,6 +1,7 @@
 # BigData
 
 <h2>This is the repository for team Loading...'s group project for CS 4001, Big Data Analytics </h2>
+<h5> Team Loading... Consists of Felipe De Morais and Michael Sobelman</h5>
 
 Below are just some things we wanted to make sure we had written down for our reference
 
