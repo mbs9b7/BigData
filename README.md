@@ -1,6 +1,6 @@
 # BigData
 
-This is the repository for team Loading...'s group project for CS 4001, Big Data Analytics 
+<h2>This is the repository for team Loading...'s group project for CS 4001, Big Data Analytics </h2>
 
 Below are just some things we wanted to make sure we had written down for our reference
 
