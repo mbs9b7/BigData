@@ -1,5 +1,8 @@
 # BigData
 
+This is the repository for team Loading...'s group project for CS 4001, Big Data Analytics 
+
+Below are just some things we wanted to make sure we had written down for our reference
 
 scp -i key-ec2.pem Air\ Temperature/Global2011T/air_temp.2010 hadoop@52.91.152.83:air_temp.2010
 
